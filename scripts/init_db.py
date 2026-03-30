@@ -1,5 +1,5 @@
 from app.database import engine, Base
-from app.models.user import User
+from app.models.user_model import User
 
 def init():
     print("Creating tables...")
