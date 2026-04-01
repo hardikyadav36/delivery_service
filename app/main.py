@@ -1,5 +1,5 @@
 from fastapi import FastAPI,Depends
-from app.api.routes import user_routes,delivery_routes
+from app.api.routes import user_routes,delivery_routes,worker_routes
 from app.database.session import Base, SessionLocal, engine
 from app.database.depends import get_db
 from sqlalchemy.orm import Session
@@ -8,6 +8,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.include_router(user_routes.router)
 app.include_router(delivery_routes.router)
+app.include_router(worker_routes.router)
 # logistic_env\scripts\activate
 
 @app.get("/")
