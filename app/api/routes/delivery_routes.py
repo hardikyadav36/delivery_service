@@ -4,7 +4,7 @@ from app.database.depends import get_db
 from app.schemas.delivery_schema import DeliveryCreate, DeliveryResponse
 from app.services import delivery_service
 
-router = APIRouter()
+router = APIRouter(prefix="/delivery", tags=["Delivery"])
 
 @router.post("/deliveries", response_model=DeliveryResponse)
 def create_delivery(delivery: DeliveryCreate, db: Session = Depends(get_db)):

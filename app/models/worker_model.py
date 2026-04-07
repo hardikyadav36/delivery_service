@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean, Float, Index
+from sqlalchemy.orm import relationship
 from app.database.session import Base
 
 class Worker(Base):
@@ -14,3 +15,4 @@ class Worker(Base):
     __table_args__ = (
         Index("idx_worker_location", "latitude", "longitude"),
     )
+    orders = relationship("Order", back_populates="worker")

@@ -6,3 +6,5 @@ def create_worker(db: Session, worker_data):
 
 def get_all_workers(db: Session):
     return worker_repository.get_all_workers(db)
+def get_available_worker(db: Session):
+    return worker_repository.get_available_worker(db)

@@ -12,4 +12,4 @@ def get_all_workers(db: Session):
     return db.query(Worker).all()
 
 def get_available_worker(db: Session):
-    return db.query(Worker).filter(Worker.is_available == True).first()
+    return db.query(Worker).filter(Worker.is_available == True).all()
